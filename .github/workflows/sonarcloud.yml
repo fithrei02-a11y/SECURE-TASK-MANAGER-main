@@ -11,8 +11,8 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=fithrei02-a1ly_SECURE-TASK-MANAGER-main
-            -Dsonar.organization=fithrei02-a1ly
+            -Dsonar.projectKey=fithrei02-a11y_SECURE-TASK-MANAGER-main
+            -Dsonar.organization=fithrei02-a11y
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           
