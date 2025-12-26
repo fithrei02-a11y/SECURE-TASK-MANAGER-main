@@ -20,6 +20,6 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=fithrei02-a11y_secure-task-managers
+            -Dsonar.projectKey=fithrei02-a11y_SECURE_TASK_MANAGER_main
             -Dsonar.organization=fithrei02-a11y
             
