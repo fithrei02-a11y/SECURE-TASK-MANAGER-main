@@ -1,25 +1,17 @@
 name: SonarCloud Scan
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 jobs:
   analyze:
-    name: Analyze with SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
+      - uses: actions/checkout@v4
+      
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # TAMBAH 2 BARIS INI:
+          SONAR_PROJECT_KEY: fithrei02-a1ly_SECURE-TASK-MANAGER-main
+          SONAR_ORGANIZATION: fithrei02-a1ly
