@@ -1,17 +1,25 @@
 name: SonarCloud Scan
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: .
           args: >
             -Dsonar.projectKey=fithrei02-a11y_secure-task-managers
             -Dsonar.organization=fithrei02-a11y
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            
